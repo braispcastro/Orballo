@@ -8,14 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		8B07E27C27541D3200808BF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E27B27541D3200808BF9 /* AppDelegate.swift */; };
-		8B07E27E27541D3200808BF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E27D27541D3200808BF9 /* SceneDelegate.swift */; };
-		8B07E28027541D3200808BF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E27F27541D3200808BF9 /* ViewController.swift */; };
-		8B07E28327541D3200808BF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E28127541D3200808BF9 /* Main.storyboard */; };
 		8B07E28527541D3400808BF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E28427541D3400808BF9 /* Assets.xcassets */; };
 		8B07E28827541D3400808BF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E28627541D3400808BF9 /* LaunchScreen.storyboard */; };
 		8B07E29327541D3400808BF9 /* OrballoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E29227541D3400808BF9 /* OrballoTests.swift */; };
 		8B07E29D27541D3400808BF9 /* OrballoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E29C27541D3400808BF9 /* OrballoUITests.swift */; };
 		8B07E29F27541D3400808BF9 /* OrballoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E29E27541D3400808BF9 /* OrballoUITestsLaunchTests.swift */; };
+		8B07E2B027541EE400808BF9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2AE27541EE400808BF9 /* HomeViewController.swift */; };
+		8B07E2B127541EE400808BF9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E2AF27541EE400808BF9 /* HomeViewController.xib */; };
+		8B07E2B327541F4700808BF9 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2B227541F4700808BF9 /* HomePresenter.swift */; };
+		8B07E2B527541FB700808BF9 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2B427541FB700808BF9 /* HomeInteractor.swift */; };
+		8B07E2B727541FD300808BF9 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2B627541FD300808BF9 /* HomeRouter.swift */; };
+		8B07E2B92754200600808BF9 /* HomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2B82754200600808BF9 /* HomeBuilder.swift */; };
+		8B07E2BD2754212600808BF9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2BC2754212600808BF9 /* BaseViewController.swift */; };
+		8B07E2BF275421A800808BF9 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2BE275421A800808BF9 /* HomeModels.swift */; };
+		8B07E2C52754377D00808BF9 /* AddLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2C32754377D00808BF9 /* AddLocationTableViewCell.swift */; };
+		8B07E2C62754377D00808BF9 /* AddLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E2C42754377D00808BF9 /* AddLocationTableViewCell.xib */; };
+		8B07E2C92754379600808BF9 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */; };
+		8B07E2CA2754379600808BF9 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +47,6 @@
 /* Begin PBXFileReference section */
 		8B07E27827541D3200808BF9 /* Orballo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orballo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B07E27B27541D3200808BF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8B07E27D27541D3200808BF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B07E27F27541D3200808BF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8B07E28227541D3200808BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B07E28427541D3400808BF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B07E28727541D3400808BF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B07E28927541D3400808BF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +55,18 @@
 		8B07E29827541D3400808BF9 /* OrballoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrballoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B07E29C27541D3400808BF9 /* OrballoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrballoUITests.swift; sourceTree = "<group>"; };
 		8B07E29E27541D3400808BF9 /* OrballoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrballoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B07E2AE27541EE400808BF9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8B07E2AF27541EE400808BF9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		8B07E2B227541F4700808BF9 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		8B07E2B427541FB700808BF9 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		8B07E2B627541FD300808BF9 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		8B07E2B82754200600808BF9 /* HomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBuilder.swift; sourceTree = "<group>"; };
+		8B07E2BC2754212600808BF9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		8B07E2BE275421A800808BF9 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		8B07E2C32754377D00808BF9 /* AddLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationTableViewCell.swift; sourceTree = "<group>"; };
+		8B07E2C42754377D00808BF9 /* AddLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLocationTableViewCell.xib; sourceTree = "<group>"; };
+		8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +117,11 @@
 		8B07E27A27541D3200808BF9 /* Orballo */ = {
 			isa = PBXGroup;
 			children = (
-				8B07E27B27541D3200808BF9 /* AppDelegate.swift */,
-				8B07E27D27541D3200808BF9 /* SceneDelegate.swift */,
-				8B07E27F27541D3200808BF9 /* ViewController.swift */,
-				8B07E28127541D3200808BF9 /* Main.storyboard */,
 				8B07E28427541D3400808BF9 /* Assets.xcassets */,
-				8B07E28627541D3400808BF9 /* LaunchScreen.storyboard */,
-				8B07E28927541D3400808BF9 /* Info.plist */,
+				8B07E27B27541D3200808BF9 /* AppDelegate.swift */,
+				8B07E2BA275420A100808BF9 /* Common */,
+				8B07E2AB27541E5800808BF9 /* Modules */,
+				8B07E2AC27541E6E00808BF9 /* SupportingFiles */,
 			);
 			path = Orballo;
 			sourceTree = "<group>";
@@ -125,6 +141,81 @@
 				8B07E29E27541D3400808BF9 /* OrballoUITestsLaunchTests.swift */,
 			);
 			path = OrballoUITests;
+			sourceTree = "<group>";
+		};
+		8B07E2AB27541E5800808BF9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8B07E2AD27541EC000808BF9 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		8B07E2AC27541E6E00808BF9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8B07E28927541D3400808BF9 /* Info.plist */,
+				8B07E28627541D3400808BF9 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		8B07E2AD27541EC000808BF9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8B07E2B82754200600808BF9 /* HomeBuilder.swift */,
+				8B07E2B627541FD300808BF9 /* HomeRouter.swift */,
+				8B07E2AF27541EE400808BF9 /* HomeViewController.xib */,
+				8B07E2AE27541EE400808BF9 /* HomeViewController.swift */,
+				8B07E2B227541F4700808BF9 /* HomePresenter.swift */,
+				8B07E2B427541FB700808BF9 /* HomeInteractor.swift */,
+				8B07E2BE275421A800808BF9 /* HomeModels.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8B07E2BA275420A100808BF9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8B07E2BB2754211400808BF9 /* BaseComponents */,
+				8B07E2C02754371B00808BF9 /* Components */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8B07E2BB2754211400808BF9 /* BaseComponents */ = {
+			isa = PBXGroup;
+			children = (
+				8B07E2BC2754212600808BF9 /* BaseViewController.swift */,
+			);
+			path = BaseComponents;
+			sourceTree = "<group>";
+		};
+		8B07E2C02754371B00808BF9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8B07E2C22754375B00808BF9 /* AddLocationTableViewCell */,
+				8B07E2C12754373200808BF9 /* LocationTableViewCell */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8B07E2C12754373200808BF9 /* LocationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */,
+				8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */,
+			);
+			path = LocationTableViewCell;
+			sourceTree = "<group>";
+		};
+		8B07E2C22754375B00808BF9 /* AddLocationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8B07E2C42754377D00808BF9 /* AddLocationTableViewCell.xib */,
+				8B07E2C32754377D00808BF9 /* AddLocationTableViewCell.swift */,
+			);
+			path = AddLocationTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +324,9 @@
 			files = (
 				8B07E28827541D3400808BF9 /* LaunchScreen.storyboard in Resources */,
 				8B07E28527541D3400808BF9 /* Assets.xcassets in Resources */,
-				8B07E28327541D3200808BF9 /* Main.storyboard in Resources */,
+				8B07E2C62754377D00808BF9 /* AddLocationTableViewCell.xib in Resources */,
+				8B07E2B127541EE400808BF9 /* HomeViewController.xib in Resources */,
+				8B07E2CA2754379600808BF9 /* LocationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +351,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B07E28027541D3200808BF9 /* ViewController.swift in Sources */,
+				8B07E2BF275421A800808BF9 /* HomeModels.swift in Sources */,
+				8B07E2B92754200600808BF9 /* HomeBuilder.swift in Sources */,
+				8B07E2B327541F4700808BF9 /* HomePresenter.swift in Sources */,
+				8B07E2C52754377D00808BF9 /* AddLocationTableViewCell.swift in Sources */,
 				8B07E27C27541D3200808BF9 /* AppDelegate.swift in Sources */,
-				8B07E27E27541D3200808BF9 /* SceneDelegate.swift in Sources */,
+				8B07E2B027541EE400808BF9 /* HomeViewController.swift in Sources */,
+				8B07E2C92754379600808BF9 /* LocationTableViewCell.swift in Sources */,
+				8B07E2B527541FB700808BF9 /* HomeInteractor.swift in Sources */,
+				8B07E2BD2754212600808BF9 /* BaseViewController.swift in Sources */,
+				8B07E2B727541FD300808BF9 /* HomeRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +397,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8B07E28127541D3200808BF9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8B07E28227541D3200808BF9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8B07E28627541D3400808BF9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,10 +533,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Orballo/Info.plist;
+				INFOPLIST_FILE = Orballo/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Orballo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -470,10 +562,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7ACUHP269Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Orballo/Info.plist;
+				INFOPLIST_FILE = Orballo/SupportingFiles/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Orballo;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

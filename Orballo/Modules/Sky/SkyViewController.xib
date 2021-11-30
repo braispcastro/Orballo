@@ -8,9 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Orballo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SkyViewController" customModule="Orballo" customModuleProvider="target">
             <connections>
-                <outlet property="locationTableView" destination="BOw-b9-19q" id="W1B-nz-DZQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +18,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="6" estimatedSectionHeaderHeight="-1" sectionFooterHeight="6" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BOw-b9-19q">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66b-xz-5j3">
+                    <rect key="frame" x="191" y="437.5" width="32" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="BOw-b9-19q" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="21B-EB-9tU"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="BOw-b9-19q" secondAttribute="bottom" id="TMm-oM-PBe"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BOw-b9-19q" secondAttribute="trailing" id="Xsx-xa-VAS"/>
-                <constraint firstItem="BOw-b9-19q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r3j-Wa-JEB"/>
+                <constraint firstItem="66b-xz-5j3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Bvi-cO-VWz"/>
+                <constraint firstItem="66b-xz-5j3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hqS-xI-6Vg"/>
             </constraints>
-            <point key="canvasLocation" x="356.52173913043481" y="22.767857142857142"/>
+            <point key="canvasLocation" x="132" y="132"/>
         </view>
     </objects>
     <resources>

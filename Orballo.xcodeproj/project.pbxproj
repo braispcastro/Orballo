@@ -25,6 +25,27 @@
 		8B07E2C62754377D00808BF9 /* AddLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E2C42754377D00808BF9 /* AddLocationTableViewCell.xib */; };
 		8B07E2C92754379600808BF9 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */; };
 		8B07E2CA2754379600808BF9 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */; };
+		8B837520275578250098D724 /* LocationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83751F275578250098D724 /* LocationBuilder.swift */; };
+		8B837522275578EB0098D724 /* LocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B837521275578EB0098D724 /* LocationRouter.swift */; };
+		8B837525275579290098D724 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B837523275579290098D724 /* LocationViewController.swift */; };
+		8B837526275579290098D724 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B837524275579290098D724 /* LocationViewController.xib */; };
+		8B83752827557A360098D724 /* LocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83752727557A360098D724 /* LocationPresenter.swift */; };
+		8B83752A27557AAF0098D724 /* LocationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83752927557AAF0098D724 /* LocationInteractor.swift */; };
+		8B83752C27557AE60098D724 /* LocationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83752B27557AE60098D724 /* LocationModels.swift */; };
+		8BE6BEC22756A94F00C710EC /* SkyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BEC12756A94F00C710EC /* SkyBuilder.swift */; };
+		8BE6BEC42756A98E00C710EC /* SkyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BEC32756A98E00C710EC /* SkyRouter.swift */; };
+		8BE6BEC72756A9C600C710EC /* SkyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BEC52756A9C600C710EC /* SkyViewController.swift */; };
+		8BE6BEC82756A9C600C710EC /* SkyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6BEC62756A9C600C710EC /* SkyViewController.xib */; };
+		8BE6BECA2756AA2D00C710EC /* SkyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BEC92756AA2D00C710EC /* SkyPresenter.swift */; };
+		8BE6BECC2756AB1E00C710EC /* SkyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BECB2756AB1E00C710EC /* SkyInteractor.swift */; };
+		8BE6BECE2756AB6B00C710EC /* SkyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BECD2756AB6B00C710EC /* SkyModels.swift */; };
+		8BE6BED02756ABF900C710EC /* SettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BECF2756ABF900C710EC /* SettingsBuilder.swift */; };
+		8BE6BED22756AC8E00C710EC /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BED12756AC8E00C710EC /* SettingsRouter.swift */; };
+		8BE6BED52756ACC300C710EC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BED32756ACC300C710EC /* SettingsViewController.swift */; };
+		8BE6BED62756ACC300C710EC /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BE6BED42756ACC300C710EC /* SettingsViewController.xib */; };
+		8BE6BED82756AD0700C710EC /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BED72756AD0700C710EC /* SettingsPresenter.swift */; };
+		8BE6BEDA2756AD6200C710EC /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BED92756AD6200C710EC /* SettingsInteractor.swift */; };
+		8BE6BEDC2756AED400C710EC /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE6BEDB2756AED400C710EC /* SettingsModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +88,27 @@
 		8B07E2C42754377D00808BF9 /* AddLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLocationTableViewCell.xib; sourceTree = "<group>"; };
 		8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		8B83751F275578250098D724 /* LocationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBuilder.swift; sourceTree = "<group>"; };
+		8B837521275578EB0098D724 /* LocationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRouter.swift; sourceTree = "<group>"; };
+		8B837523275579290098D724 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		8B837524275579290098D724 /* LocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationViewController.xib; sourceTree = "<group>"; };
+		8B83752727557A360098D724 /* LocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPresenter.swift; sourceTree = "<group>"; };
+		8B83752927557AAF0098D724 /* LocationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInteractor.swift; sourceTree = "<group>"; };
+		8B83752B27557AE60098D724 /* LocationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModels.swift; sourceTree = "<group>"; };
+		8BE6BEC12756A94F00C710EC /* SkyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyBuilder.swift; sourceTree = "<group>"; };
+		8BE6BEC32756A98E00C710EC /* SkyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyRouter.swift; sourceTree = "<group>"; };
+		8BE6BEC52756A9C600C710EC /* SkyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyViewController.swift; sourceTree = "<group>"; };
+		8BE6BEC62756A9C600C710EC /* SkyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SkyViewController.xib; sourceTree = "<group>"; };
+		8BE6BEC92756AA2D00C710EC /* SkyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyPresenter.swift; sourceTree = "<group>"; };
+		8BE6BECB2756AB1E00C710EC /* SkyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyInteractor.swift; sourceTree = "<group>"; };
+		8BE6BECD2756AB6B00C710EC /* SkyModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyModels.swift; sourceTree = "<group>"; };
+		8BE6BECF2756ABF900C710EC /* SettingsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBuilder.swift; sourceTree = "<group>"; };
+		8BE6BED12756AC8E00C710EC /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		8BE6BED32756ACC300C710EC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8BE6BED42756ACC300C710EC /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		8BE6BED72756AD0700C710EC /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		8BE6BED92756AD6200C710EC /* SettingsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		8BE6BEDB2756AED400C710EC /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +189,9 @@
 			isa = PBXGroup;
 			children = (
 				8B07E2AD27541EC000808BF9 /* Home */,
+				8B83751C275576A30098D724 /* Location */,
+				8B83751D275576BD0098D724 /* Sky */,
+				8B83751E275576D50098D724 /* Settings */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -216,6 +261,48 @@
 				8B07E2C32754377D00808BF9 /* AddLocationTableViewCell.swift */,
 			);
 			path = AddLocationTableViewCell;
+			sourceTree = "<group>";
+		};
+		8B83751C275576A30098D724 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				8B83751F275578250098D724 /* LocationBuilder.swift */,
+				8B837521275578EB0098D724 /* LocationRouter.swift */,
+				8B837524275579290098D724 /* LocationViewController.xib */,
+				8B837523275579290098D724 /* LocationViewController.swift */,
+				8B83752727557A360098D724 /* LocationPresenter.swift */,
+				8B83752927557AAF0098D724 /* LocationInteractor.swift */,
+				8B83752B27557AE60098D724 /* LocationModels.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		8B83751D275576BD0098D724 /* Sky */ = {
+			isa = PBXGroup;
+			children = (
+				8BE6BEC12756A94F00C710EC /* SkyBuilder.swift */,
+				8BE6BEC32756A98E00C710EC /* SkyRouter.swift */,
+				8BE6BEC62756A9C600C710EC /* SkyViewController.xib */,
+				8BE6BEC52756A9C600C710EC /* SkyViewController.swift */,
+				8BE6BEC92756AA2D00C710EC /* SkyPresenter.swift */,
+				8BE6BECB2756AB1E00C710EC /* SkyInteractor.swift */,
+				8BE6BECD2756AB6B00C710EC /* SkyModels.swift */,
+			);
+			path = Sky;
+			sourceTree = "<group>";
+		};
+		8B83751E275576D50098D724 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8BE6BECF2756ABF900C710EC /* SettingsBuilder.swift */,
+				8BE6BED12756AC8E00C710EC /* SettingsRouter.swift */,
+				8BE6BED42756ACC300C710EC /* SettingsViewController.xib */,
+				8BE6BED32756ACC300C710EC /* SettingsViewController.swift */,
+				8BE6BED72756AD0700C710EC /* SettingsPresenter.swift */,
+				8BE6BED92756AD6200C710EC /* SettingsInteractor.swift */,
+				8BE6BEDB2756AED400C710EC /* SettingsModels.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +410,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B07E28827541D3400808BF9 /* LaunchScreen.storyboard in Resources */,
+				8B837526275579290098D724 /* LocationViewController.xib in Resources */,
+				8BE6BEC82756A9C600C710EC /* SkyViewController.xib in Resources */,
+				8BE6BED62756ACC300C710EC /* SettingsViewController.xib in Resources */,
 				8B07E28527541D3400808BF9 /* Assets.xcassets in Resources */,
 				8B07E2C62754377D00808BF9 /* AddLocationTableViewCell.xib in Resources */,
 				8B07E2B127541EE400808BF9 /* HomeViewController.xib in Resources */,
@@ -351,16 +441,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B837520275578250098D724 /* LocationBuilder.swift in Sources */,
 				8B07E2BF275421A800808BF9 /* HomeModels.swift in Sources */,
+				8BE6BEC22756A94F00C710EC /* SkyBuilder.swift in Sources */,
 				8B07E2B92754200600808BF9 /* HomeBuilder.swift in Sources */,
 				8B07E2B327541F4700808BF9 /* HomePresenter.swift in Sources */,
+				8BE6BECE2756AB6B00C710EC /* SkyModels.swift in Sources */,
 				8B07E2C52754377D00808BF9 /* AddLocationTableViewCell.swift in Sources */,
+				8BE6BED82756AD0700C710EC /* SettingsPresenter.swift in Sources */,
+				8BE6BEDC2756AED400C710EC /* SettingsModels.swift in Sources */,
+				8BE6BEC42756A98E00C710EC /* SkyRouter.swift in Sources */,
+				8BE6BED52756ACC300C710EC /* SettingsViewController.swift in Sources */,
+				8B837522275578EB0098D724 /* LocationRouter.swift in Sources */,
+				8BE6BED22756AC8E00C710EC /* SettingsRouter.swift in Sources */,
 				8B07E27C27541D3200808BF9 /* AppDelegate.swift in Sources */,
+				8B837525275579290098D724 /* LocationViewController.swift in Sources */,
+				8BE6BECC2756AB1E00C710EC /* SkyInteractor.swift in Sources */,
 				8B07E2B027541EE400808BF9 /* HomeViewController.swift in Sources */,
+				8BE6BED02756ABF900C710EC /* SettingsBuilder.swift in Sources */,
 				8B07E2C92754379600808BF9 /* LocationTableViewCell.swift in Sources */,
+				8BE6BECA2756AA2D00C710EC /* SkyPresenter.swift in Sources */,
 				8B07E2B527541FB700808BF9 /* HomeInteractor.swift in Sources */,
+				8B83752827557A360098D724 /* LocationPresenter.swift in Sources */,
+				8BE6BEC72756A9C600C710EC /* SkyViewController.swift in Sources */,
+				8B83752C27557AE60098D724 /* LocationModels.swift in Sources */,
 				8B07E2BD2754212600808BF9 /* BaseViewController.swift in Sources */,
 				8B07E2B727541FD300808BF9 /* HomeRouter.swift in Sources */,
+				8B83752A27557AAF0098D724 /* LocationInteractor.swift in Sources */,
+				8BE6BEDA2756AD6200C710EC /* SettingsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

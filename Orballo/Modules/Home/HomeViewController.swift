@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: BaseViewController {
 
     @IBOutlet weak var locationTableView: UITableView!
-    @IBOutlet weak var bottomBar: UITabBar!
     
     var presenter: HomePresenterProtocol!
     private var viewModel: Home.ViewModel!
@@ -33,6 +32,10 @@ class HomeViewController: BaseViewController {
         locationTableView.register(locationCell, forCellReuseIdentifier: ReuseIdentifiers.locationCell)
         locationTableView.register(addLocationCell, forCellReuseIdentifier: ReuseIdentifiers.addLocationCell)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter.prepareView()
+    }
 
 }
 
@@ -40,11 +43,13 @@ extension HomeViewController: HomeViewControllerProtocol {
     
     func show(viewModel: Home.ViewModel) {
         self.viewModel = viewModel
-        self.title = viewModel.title
+        self.tabBarController?.title = viewModel.title
+        
         // Mocked locations
         locations = [
             Home.LocationViewModel(name: "A Coruña", isCurrentLocation: true, weatherDescription: "Parcialmente nublado", temperature: "12º"),
-            Home.LocationViewModel(name: "A Veiga", isCurrentLocation: false, weatherDescription: "Despejado", temperature: "8º")
+            Home.LocationViewModel(name: "A Coruña", isCurrentLocation: false, weatherDescription: "Parcialmente nublado", temperature: "12º"),
+            Home.LocationViewModel(name: "A Veiga", isCurrentLocation: false, weatherDescription: "Despejado", temperature: "2º")
         ]
     }
     

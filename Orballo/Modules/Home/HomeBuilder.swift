@@ -17,6 +17,9 @@ final class HomeBuilder {
         let interactor = HomeInteractor()
         let presenter: HomePresenter = HomePresenter(viewController: viewController, router: router, interactor: interactor)
         
+        viewController.title = "Home"
+        viewController.tabBarItem.image = UIImage(systemName: "house")
+        
         viewController.presenter = presenter
         interactor.presenter = presenter
 

@@ -15,9 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
                     
             let homeViewController = HomeBuilder().build()
-            let backButtonImage = UIImage(systemName: "arrow.backward")
+            let locationViewController = LocationBuilder().build()
+            let skyViewController = SkyBuilder().build()
+            let settingsViewController = SettingsBuilder().build()
+            let mainTabBarViewController = UITabBarController()
+            mainTabBarViewController.setViewControllers([
+                homeViewController,
+                locationViewController,
+                skyViewController,
+                settingsViewController
+            ], animated: true)
             
-            let navController = UINavigationController(rootViewController: homeViewController)
+            let navController = UINavigationController(rootViewController: mainTabBarViewController)
+            let backButtonImage = UIImage(systemName: "arrow.backward")
             navController.navigationBar.backIndicatorImage = backButtonImage
             navController.navigationBar.backIndicatorTransitionMaskImage = backButtonImage
             navController.navigationBar.prefersLargeTitles = true

@@ -10,7 +10,7 @@ import Foundation
 enum Location {
     
     struct ViewModel: Equatable {
-        let title: String
+        
     }
     
 }

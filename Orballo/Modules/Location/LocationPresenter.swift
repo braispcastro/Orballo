@@ -34,7 +34,7 @@ final class LocationPresenter {
 extension LocationPresenter: LocationPresenterProtocol {
     
     func prepareView() {
-        let viewModel = Location.ViewModel(title: "Location")
+        let viewModel = Location.ViewModel()
         viewController.show(viewModel: viewModel)
     }
     

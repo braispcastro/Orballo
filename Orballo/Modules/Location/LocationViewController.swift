@@ -23,7 +23,7 @@ extension LocationViewController: LocationViewControllerProtocol {
     
     func show(viewModel: Location.ViewModel) {
         self.viewModel = viewModel
-        self.tabBarController?.title = viewModel.title
+        self.tabBarController?.title = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {

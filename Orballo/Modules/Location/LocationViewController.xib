@@ -18,20 +18,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dom-Um-jIX">
-                    <rect key="frame" x="166" y="437.5" width="82" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ebL-Ko-ofd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                </mapView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="dom-Um-jIX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SnP-zk-906"/>
-                <constraint firstItem="dom-Um-jIX" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="oaT-An-gem"/>
+                <constraint firstItem="ebL-Ko-ofd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0nh-XU-G6r"/>
+                <constraint firstItem="ebL-Ko-ofd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1d3-OU-WOH"/>
+                <constraint firstItem="ebL-Ko-ofd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WyC-gW-m3i"/>
+                <constraint firstItem="ebL-Ko-ofd" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="tmj-gY-Kvf"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="132"/>
+            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>
     </objects>
     <resources>

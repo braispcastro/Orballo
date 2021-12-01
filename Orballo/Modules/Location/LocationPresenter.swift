@@ -35,6 +35,7 @@ extension LocationPresenter: LocationPresenterProtocol {
     
     func prepareView() {
         let viewModel = Location.ViewModel()
+        LocationManager.shared.startUpdatingLocation()
         viewController.show(viewModel: viewModel)
     }
     

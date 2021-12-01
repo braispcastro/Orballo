@@ -35,6 +35,7 @@ extension HomePresenter: HomePresenterProtocol {
     
     func prepareView() {
         let viewModel = Home.ViewModel(title: "Orballo")
+        LocationManager.shared.startUpdatingLocation()
         viewController.show(viewModel: viewModel)
     }
     

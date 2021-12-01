@@ -32,7 +32,7 @@ class HomeViewController: BaseViewController {
         locationTableView.register(locationCell, forCellReuseIdentifier: ReuseIdentifiers.locationCell)
         locationTableView.register(addLocationCell, forCellReuseIdentifier: ReuseIdentifiers.addLocationCell)
     }
-    
+    	
     override func viewWillAppear(_ animated: Bool) {
         presenter.prepareView()
     }

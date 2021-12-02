@@ -9,10 +9,13 @@ import Foundation
 
 protocol HomeViewControllerProtocol {
     func show(viewModel: Home.ViewModel)
+    func showLocations(locations: [Home.LocationViewModel])
 }
 
 protocol HomePresenterProtocol {
     func prepareView()
+    func getLocationsToShow()
+    func locationToDelete(locationViewModel: Home.LocationViewModel)
 }
 
 final class HomePresenter {
@@ -39,8 +42,19 @@ extension HomePresenter: HomePresenterProtocol {
         viewController.show(viewModel: viewModel)
     }
     
+    func getLocationsToShow() {
+        interactor.createLocationList()
+    }
+    
+    func locationToDelete(locationViewModel: Home.LocationViewModel) {
+        interactor.deleteLocation(locationViewModel: locationViewModel)
+    }
 }
 
 extension HomePresenter: HomeInteractorCallbackProtocol {
+    
+    func showLocationList(locations: [Home.LocationViewModel]) {
+        viewController.showLocations(locations: locations)
+    }
     
 }

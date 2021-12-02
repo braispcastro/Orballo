@@ -25,6 +25,7 @@
 		8B07E2C62754377D00808BF9 /* AddLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E2C42754377D00808BF9 /* AddLocationTableViewCell.xib */; };
 		8B07E2C92754379600808BF9 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */; };
 		8B07E2CA2754379600808BF9 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */; };
+		8B2949D52759460900FDC625 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B2949D32759460900FDC625 /* Model.xcdatamodeld */; };
 		8B750BEC2757CCDD00907D3D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B750BEB2757CCDD00907D3D /* LocationManager.swift */; };
 		8B837520275578250098D724 /* LocationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83751F275578250098D724 /* LocationBuilder.swift */; };
 		8B837522275578EB0098D724 /* LocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B837521275578EB0098D724 /* LocationRouter.swift */; };
@@ -89,6 +90,7 @@
 		8B07E2C42754377D00808BF9 /* AddLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLocationTableViewCell.xib; sourceTree = "<group>"; };
 		8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
+		8B2949D42759460900FDC625 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8B750BEB2757CCDD00907D3D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8B83751F275578250098D724 /* LocationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBuilder.swift; sourceTree = "<group>"; };
 		8B837521275578EB0098D724 /* LocationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRouter.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				8B07E2BB2754211400808BF9 /* BaseComponents */,
 				8B07E2C02754371B00808BF9 /* Components */,
+				8B2949D62759461700FDC625 /* Database */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -264,6 +267,14 @@
 				8B07E2C32754377D00808BF9 /* AddLocationTableViewCell.swift */,
 			);
 			path = AddLocationTableViewCell;
+			sourceTree = "<group>";
+		};
+		8B2949D62759461700FDC625 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				8B2949D32759460900FDC625 /* Model.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		8B750BE92757CCBF00907D3D /* Core */ = {
@@ -477,6 +488,7 @@
 				8B837525275579290098D724 /* LocationViewController.swift in Sources */,
 				8BE6BECC2756AB1E00C710EC /* SkyInteractor.swift in Sources */,
 				8B07E2B027541EE400808BF9 /* HomeViewController.swift in Sources */,
+				8B2949D52759460900FDC625 /* Model.xcdatamodeld in Sources */,
 				8BE6BED02756ABF900C710EC /* SettingsBuilder.swift in Sources */,
 				8B07E2C92754379600808BF9 /* LocationTableViewCell.swift in Sources */,
 				8BE6BECA2756AA2D00C710EC /* SkyPresenter.swift in Sources */,
@@ -846,6 +858,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8B2949D32759460900FDC625 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B2949D42759460900FDC625 /* Model.xcdatamodel */,
+			);
+			currentVersion = 8B2949D42759460900FDC625 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8B07E27027541D3100808BF9 /* Project object */;
 }

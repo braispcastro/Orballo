@@ -14,6 +14,9 @@ class SkyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         presenter.prepareView()
     }
 
@@ -24,10 +27,6 @@ extension SkyViewController: SkyViewControllerProtocol {
     func show(viewModel: Sky.ViewModel) {
         self.viewModel = viewModel
         self.tabBarController?.title = viewModel.title
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        presenter.prepareView()
     }
     
 }

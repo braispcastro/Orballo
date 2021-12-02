@@ -13,7 +13,7 @@ class HomeViewController: BaseViewController {
     
     var presenter: HomePresenterProtocol!
     private var viewModel: Home.ViewModel!
-    private var locations: [Home.LocationViewModel] = []
+    private var locationList: [Home.LocationViewModel] = []
     
     enum ReuseIdentifiers {
         static let locationCell = "location-cell"
@@ -22,7 +22,6 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.prepareView()
         
         locationTableView.delegate = self
         locationTableView.dataSource = self
@@ -35,6 +34,7 @@ class HomeViewController: BaseViewController {
     	
     override func viewWillAppear(_ animated: Bool) {
         presenter.prepareView()
+        presenter.getLocationsToShow()
     }
 
 }
@@ -44,13 +44,11 @@ extension HomeViewController: HomeViewControllerProtocol {
     func show(viewModel: Home.ViewModel) {
         self.viewModel = viewModel
         self.tabBarController?.title = viewModel.title
-        
-        // Mocked locations
-        locations = [
-            Home.LocationViewModel(name: "A Coruña", isCurrentLocation: true, weatherDescription: "Parcialmente nublado", temperature: "12º"),
-            Home.LocationViewModel(name: "A Coruña", isCurrentLocation: false, weatherDescription: "Parcialmente nublado", temperature: "12º"),
-            Home.LocationViewModel(name: "A Veiga", isCurrentLocation: false, weatherDescription: "Despejado", temperature: "2º")
-        ]
+    }
+    
+    func showLocations(locations: [Home.LocationViewModel]) {
+        locationList = locations
+        locationTableView.reloadData()
     }
     
 }
@@ -58,7 +56,7 @@ extension HomeViewController: HomeViewControllerProtocol {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return locations.count + 1
+        return locationList.count + 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,7 +64,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section < locations.count {
+        if indexPath.section < locationList.count {
             return 130
         } else {
             return 50
@@ -80,8 +78,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section < locations.count {
-            let item = locations[indexPath.section]
+        if indexPath.section < locationList.count {
+            let item = locationList[indexPath.section]
             
             guard let cell: LocationTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.locationCell) as? LocationTableViewCell else {
                 return UITableViewCell()
@@ -100,7 +98,19 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.title.text = "NEW LOCATION"
             return cell
         }
-        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let location = locationList[indexPath.section]
+            presenter.locationToDelete(locationViewModel: location)
+            locationList.remove(at: indexPath.section)
+            tableView.deleteSections(IndexSet(arrayLiteral: indexPath.section), with: .fade)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section != 0 && indexPath.section != locationList.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

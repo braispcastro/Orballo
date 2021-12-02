@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationViewController" customModule="Orballo" customModuleProvider="target">
             <connections>
+                <outlet property="addLocationButton" destination="bUI-HJ-Yq9" id="CPc-G2-iWU"/>
+                <outlet property="centerLocationButton" destination="h7w-3b-c9i" id="bgb-kD-Jjc"/>
+                <outlet property="mapView" destination="ebL-Ko-ofd" id="AzK-W8-STk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,19 +24,50 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ebL-Ko-ofd">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                 </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7w-3b-c9i">
+                    <rect key="frame" x="342" y="774" width="56" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="56" id="8PO-lm-EwN"/>
+                        <constraint firstAttribute="width" secondItem="h7w-3b-c9i" secondAttribute="height" multiplier="1:1" id="eiI-uI-8iw"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" image="location.fill" catalog="system" cornerStyle="capsule">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-HJ-Yq9">
+                    <rect key="frame" x="16" y="774" width="56" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bUI-HJ-Yq9" secondAttribute="height" multiplier="1:1" id="jyY-gX-KIr"/>
+                        <constraint firstAttribute="width" constant="56" id="w4W-vh-cEW"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" image="plus" catalog="system" cornerStyle="capsule">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ebL-Ko-ofd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0nh-XU-G6r"/>
                 <constraint firstItem="ebL-Ko-ofd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1d3-OU-WOH"/>
+                <constraint firstItem="bUI-HJ-Yq9" firstAttribute="width" secondItem="bUI-HJ-Yq9" secondAttribute="height" multiplier="1:1" id="1wa-La-uea"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bUI-HJ-Yq9" secondAttribute="bottom" constant="32" id="22N-kA-CvQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h7w-3b-c9i" secondAttribute="trailing" constant="16" id="NEK-iV-whC"/>
                 <constraint firstItem="ebL-Ko-ofd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WyC-gW-m3i"/>
+                <constraint firstItem="bUI-HJ-Yq9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="joq-Q9-0e3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="h7w-3b-c9i" secondAttribute="bottom" constant="32" id="sYg-mP-Sgc"/>
                 <constraint firstItem="ebL-Ko-ofd" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="tmj-gY-Kvf"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>
     </objects>
     <resources>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

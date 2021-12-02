@@ -14,6 +14,9 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         presenter.prepareView()
     }
 
@@ -24,10 +27,6 @@ extension SettingsViewController: SettingsViewControllerProtocol {
     func show(viewModel: Settings.ViewModel) {
         self.viewModel = viewModel
         self.tabBarController?.title = viewModel.title
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        presenter.prepareView()
     }
     
 }

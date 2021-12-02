@@ -40,7 +40,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         self.locationManager?.stopUpdatingLocation()
     }
     
-    // CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
         guard let location = locations.last else {
@@ -56,7 +55,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         updateLocationDidFailWithError(error: error)
     }
     
-    // Private function
     private func updateLocation(currentLocation: CLLocation){
         
         UserDefaults.standard.set(currentLocation.coordinate.latitude, forKey: "Latitude")

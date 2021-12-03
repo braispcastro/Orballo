@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SkyViewController: UIViewController {
+class SkyViewController: BaseViewController {
 
     var presenter: SkyPresenterProtocol!
     private var viewModel: Sky.ViewModel!
@@ -18,6 +18,7 @@ class SkyViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         presenter.prepareView()
+        super.viewWillAppear(animated)
     }
 
 }
@@ -27,6 +28,7 @@ extension SkyViewController: SkyViewControllerProtocol {
     func show(viewModel: Sky.ViewModel) {
         self.viewModel = viewModel
         self.tabBarController?.title = viewModel.title
+        self.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 }

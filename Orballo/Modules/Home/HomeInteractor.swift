@@ -32,7 +32,17 @@ class HomeInteractor {
 extension HomeInteractor: HomeInteractorProtocol {
     
     func deleteLocation(locationViewModel: Home.LocationViewModel) {
-        print(locationViewModel.name)
+        do {
+            let fetchRequest = LocationEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "city == %@", locationViewModel.name)
+            let objectsToDelete = try context.fetch(fetchRequest)
+            objectsToDelete.forEach() { object in
+                context.delete(object)
+            }
+            try context.save()
+        } catch {
+            print(error)
+        }
     }
     
     func createLocationList() {
@@ -45,7 +55,6 @@ extension HomeInteractor: HomeInteractorProtocol {
         
         CLGeocoder().reverseGeocodeLocation(CLLocation(latitude: latitude, longitude: longitude)) { p, e in
             if let error = e {
-                // TODO: Throw error to user
                 print(error)
             }
             

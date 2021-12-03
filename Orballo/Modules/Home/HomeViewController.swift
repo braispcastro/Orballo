@@ -35,6 +35,7 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         presenter.prepareView()
         presenter.getLocationsToShow()
+        super.viewWillAppear(animated)
     }
 
 }
@@ -44,6 +45,7 @@ extension HomeViewController: HomeViewControllerProtocol {
     func show(viewModel: Home.ViewModel) {
         self.viewModel = viewModel
         self.tabBarController?.title = viewModel.title
+        self.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func showLocations(locations: [Home.LocationViewModel]) {

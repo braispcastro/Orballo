@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class LocationViewController: UIViewController {
+class LocationViewController: BaseViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var centerLocationButton: UIButton!
@@ -19,12 +19,17 @@ class LocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.title = ""
         
         centerLocationButton.addTarget(self, action: #selector(centerInCurrentLocation), for: .touchUpInside)
         addLocationButton.addTarget(self, action: #selector(getLocationInformation), for: .touchUpInside)
         
         presenter.prepareView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.title = ""
+        self.tabBarController?.navigationController?.setNavigationBarHidden(true, animated: true)
+        super.viewWillAppear(animated)
     }
     
     @objc private func centerInCurrentLocation() {

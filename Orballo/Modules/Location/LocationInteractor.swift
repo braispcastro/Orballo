@@ -52,14 +52,21 @@ extension LocationInteractor: LocationInteractorProtocol {
     
     func saveLocation(placeViewModel: Location.PlaceViewModel) {
         do {
-            let location = LocationEntity(context: self.context)
-            location.country = placeViewModel.country
-            location.state = placeViewModel.state
-            location.city = placeViewModel.city
-            location.zipcode = placeViewModel.zipcode
-            location.latitude = placeViewModel.latitude
-            location.longitude = placeViewModel.longitude
-            try self.context.save()
+            let fetchRequest = LocationEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "city == %@", placeViewModel.city)
+            let object = try context.fetch(fetchRequest)
+            if (object.count > 0) {
+                // TODO: Notify user location already saved (??)
+            } else {
+                let location = LocationEntity(context: self.context)
+                location.country = placeViewModel.country
+                location.state = placeViewModel.state
+                location.city = placeViewModel.city
+                location.zipcode = placeViewModel.zipcode
+                location.latitude = placeViewModel.latitude
+                location.longitude = placeViewModel.longitude
+                try self.context.save()
+            }
         } catch {
             print(error)
         }

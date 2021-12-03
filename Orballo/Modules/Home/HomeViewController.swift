@@ -58,7 +58,8 @@ extension HomeViewController: HomeViewControllerProtocol {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return locationList.count + 1
+        //return locationList.count + 1
+        return locationList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,7 +81,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section < locationList.count {
+        //if indexPath.section < locationList.count {
             let item = locationList[indexPath.section]
             
             guard let cell: LocationTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.locationCell) as? LocationTableViewCell else {
@@ -92,14 +93,14 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             cell.weatherDescription.text = item.weatherDescription
             cell.temperature.text = item.temperature
             return cell
-        } else {
-            guard let cell: AddLocationTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.addLocationCell) as? AddLocationTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            cell.title.text = "NEW LOCATION"
-            return cell
-        }
+        //} else {
+        //    guard let cell: AddLocationTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.addLocationCell) as? AddLocationTableViewCell else {
+        //        return UITableViewCell()
+        //    }
+        //
+        //    cell.title.text = "NEW LOCATION"
+        //    return cell
+        //}
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

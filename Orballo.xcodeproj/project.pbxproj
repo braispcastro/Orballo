@@ -26,6 +26,11 @@
 		8B07E2C92754379600808BF9 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */; };
 		8B07E2CA2754379600808BF9 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */; };
 		8B2949D52759460900FDC625 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B2949D32759460900FDC625 /* Model.xcdatamodeld */; };
+		8B6342B9275D7B9F00889BAC /* AccuweatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6342B8275D7B9F00889BAC /* AccuweatherService.swift */; };
+		8B6342BB275D7BAE00889BAC /* AccuweatherModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6342BA275D7BAE00889BAC /* AccuweatherModels.swift */; };
+		8B6342BE275D82C900889BAC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8B6342BD275D82C900889BAC /* Alamofire */; };
+		8B6342C0275D875800889BAC /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8B6342BF275D875800889BAC /* Settings.bundle */; };
+		8B6342C4275D882A00889BAC /* Services-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B6342C3275D882A00889BAC /* Services-Info.plist */; };
 		8B750BEC2757CCDD00907D3D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B750BEB2757CCDD00907D3D /* LocationManager.swift */; };
 		8B837520275578250098D724 /* LocationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B83751F275578250098D724 /* LocationBuilder.swift */; };
 		8B837522275578EB0098D724 /* LocationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B837521275578EB0098D724 /* LocationRouter.swift */; };
@@ -91,6 +96,10 @@
 		8B07E2C72754379600808BF9 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		8B07E2C82754379600808BF9 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		8B2949D42759460900FDC625 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		8B6342B8275D7B9F00889BAC /* AccuweatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccuweatherService.swift; sourceTree = "<group>"; };
+		8B6342BA275D7BAE00889BAC /* AccuweatherModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccuweatherModels.swift; sourceTree = "<group>"; };
+		8B6342BF275D875800889BAC /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8B6342C3275D882A00889BAC /* Services-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Services-Info.plist"; sourceTree = "<group>"; };
 		8B750BEB2757CCDD00907D3D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		8B83751F275578250098D724 /* LocationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationBuilder.swift; sourceTree = "<group>"; };
 		8B837521275578EB0098D724 /* LocationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRouter.swift; sourceTree = "<group>"; };
@@ -120,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B6342BE275D82C900889BAC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,8 +214,10 @@
 		8B07E2AC27541E6E00808BF9 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				8B07E28927541D3400808BF9 /* Info.plist */,
+				8B6342BF275D875800889BAC /* Settings.bundle */,
 				8B07E28627541D3400808BF9 /* LaunchScreen.storyboard */,
+				8B07E28927541D3400808BF9 /* Info.plist */,
+				8B6342C3275D882A00889BAC /* Services-Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -277,10 +289,28 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		8B6342B6275D7B8200889BAC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8B6342B7275D7B9100889BAC /* Accuweather */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8B6342B7275D7B9100889BAC /* Accuweather */ = {
+			isa = PBXGroup;
+			children = (
+				8B6342B8275D7B9F00889BAC /* AccuweatherService.swift */,
+				8B6342BA275D7BAE00889BAC /* AccuweatherModels.swift */,
+			);
+			path = Accuweather;
+			sourceTree = "<group>";
+		};
 		8B750BE92757CCBF00907D3D /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				8B750BEA2757CCCF00907D3D /* Location */,
+				8B6342B6275D7B8200889BAC /* Services */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -351,6 +381,9 @@
 			dependencies = (
 			);
 			name = Orballo;
+			packageProductDependencies = (
+				8B6342BD275D82C900889BAC /* Alamofire */,
+			);
 			productName = Orballo;
 			productReference = 8B07E27827541D3200808BF9 /* Orballo.app */;
 			productType = "com.apple.product-type.application";
@@ -423,6 +456,9 @@
 				Base,
 			);
 			mainGroup = 8B07E26F27541D3100808BF9;
+			packageReferences = (
+				8B6342BC275D82C900889BAC /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 8B07E27927541D3200808BF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -446,6 +482,8 @@
 				8B07E28527541D3400808BF9 /* Assets.xcassets in Resources */,
 				8B07E2C62754377D00808BF9 /* AddLocationTableViewCell.xib in Resources */,
 				8B07E2B127541EE400808BF9 /* HomeViewController.xib in Resources */,
+				8B6342C0275D875800889BAC /* Settings.bundle in Resources */,
+				8B6342C4275D882A00889BAC /* Services-Info.plist in Resources */,
 				8B07E2CA2754379600808BF9 /* LocationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,9 +511,11 @@
 			files = (
 				8B837520275578250098D724 /* LocationBuilder.swift in Sources */,
 				8B07E2BF275421A800808BF9 /* HomeModels.swift in Sources */,
+				8B6342BB275D7BAE00889BAC /* AccuweatherModels.swift in Sources */,
 				8BE6BEC22756A94F00C710EC /* SkyBuilder.swift in Sources */,
 				8B07E2B92754200600808BF9 /* HomeBuilder.swift in Sources */,
 				8B07E2B327541F4700808BF9 /* HomePresenter.swift in Sources */,
+				8B6342B9275D7B9F00889BAC /* AccuweatherService.swift in Sources */,
 				8BE6BECE2756AB6B00C710EC /* SkyModels.swift in Sources */,
 				8B07E2C52754377D00808BF9 /* AddLocationTableViewCell.swift in Sources */,
 				8BE6BED82756AD0700C710EC /* SettingsPresenter.swift in Sources */,
@@ -862,6 +902,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B6342BC275D82C900889BAC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.4.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B6342BD275D82C900889BAC /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B6342BC275D82C900889BAC /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8B2949D32759460900FDC625 /* Model.xcdatamodeld */ = {

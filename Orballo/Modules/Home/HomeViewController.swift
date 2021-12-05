@@ -58,7 +58,6 @@ extension HomeViewController: HomeViewControllerProtocol {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        //return locationList.count + 1
         return locationList.count
     }
     
@@ -81,26 +80,17 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //if indexPath.section < locationList.count {
-            let item = locationList[indexPath.section]
-            
-            guard let cell: LocationTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.locationCell) as? LocationTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            cell.locationName.text = item.name
-            cell.locationImage.isHidden = !item.isCurrentLocation
-            cell.weatherDescription.text = item.weatherDescription
-            cell.temperature.text = item.temperature
-            return cell
-        //} else {
-        //    guard let cell: AddLocationTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.addLocationCell) as? AddLocationTableViewCell else {
-        //        return UITableViewCell()
-        //    }
-        //
-        //    cell.title.text = "NEW LOCATION"
-        //    return cell
-        //}
+        let item = locationList[indexPath.section]
+        
+        guard let cell: LocationTableViewCell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifiers.locationCell) as? LocationTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.locationName.text = item.name
+        cell.locationImage.isHidden = !item.isCurrentLocation
+        cell.weatherDescription.text = item.weatherDescription
+        cell.temperature.text = item.temperature
+        return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

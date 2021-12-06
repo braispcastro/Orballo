@@ -20,8 +20,12 @@ class AccuweatherService {
         func url() -> URL? {
             
             let uri = "http://dataservice.accuweather.com/currentconditions/v1"
-            let apikey = ""
             let language = "es-es"
+            var apikey = ""
+            if let path = Bundle.main.path(forResource: "Services-Info", ofType: "plist"),
+                let dictionary = NSDictionary(contentsOfFile: path) {
+                apikey = dictionary["accuweather-apikey"] as! String
+            }
             
             switch self {
             case .geoposition(let latitude, let longitude) :

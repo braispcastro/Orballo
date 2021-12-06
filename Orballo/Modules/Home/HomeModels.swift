@@ -18,6 +18,8 @@ enum Home {
         let isCurrentLocation: Bool
         let weatherDescription: String
         let temperature: String
+        let locationKey: String
+        let added: Date
     }
     
 }

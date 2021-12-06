@@ -12,7 +12,7 @@ import CoreData
 
 protocol LocationInteractorProtocol {
     func getLocationInformation(latitude: Double, longitude: Double)
-    func saveLocation(placeViewModel: Location.PlaceViewModel)
+    func completeWithLocationKey(placeViewModel: Location.PlaceViewModel)
 }
 
 protocol LocationInteractorCallbackProtocol {
@@ -50,7 +50,7 @@ extension LocationInteractor: LocationInteractorProtocol {
         }
     }
     
-    func saveLocation(placeViewModel: Location.PlaceViewModel) {
+    func completeWithLocationKey(placeViewModel: Location.PlaceViewModel) {
         do {
             let fetchRequest = LocationEntity.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "city == %@", placeViewModel.city)
@@ -58,15 +58,29 @@ extension LocationInteractor: LocationInteractorProtocol {
             if (object.count > 0) {
                 // TODO: Notify user location already saved (??)
             } else {
-                let location = LocationEntity(context: self.context)
-                location.country = placeViewModel.country
-                location.state = placeViewModel.state
-                location.city = placeViewModel.city
-                location.zipcode = placeViewModel.zipcode
-                location.latitude = placeViewModel.latitude
-                location.longitude = placeViewModel.longitude
-                try self.context.save()
+                AccuweatherService.shared.getLocationKey(latitude: placeViewModel.latitude, longitude: placeViewModel.longitude) { key in
+                    self.saveLocation(placeViewModel: placeViewModel, locationKey: key)
+                } failure: { error in
+                    print(error)
+                }
             }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func saveLocation(placeViewModel: Location.PlaceViewModel, locationKey: String) {
+        do {
+            let location = LocationEntity(context: self.context)
+            location.country = placeViewModel.country
+            location.state = placeViewModel.state
+            location.city = placeViewModel.city
+            location.zipcode = placeViewModel.zipcode
+            location.latitude = placeViewModel.latitude
+            location.longitude = placeViewModel.longitude
+            location.locationKey = locationKey
+            location.added = Date()
+            try self.context.save()
         } catch {
             print(error)
         }

@@ -70,7 +70,12 @@ extension HomeInteractor: HomeInteractorProtocol {
     func createLocationList(city: String?) {
         var locations: [Home.LocationViewModel] = []
         if let c = city {
-            locations.append(Home.LocationViewModel(name: c, isCurrentLocation: true, weatherDescription: "", temperature: ""))
+            locations.append(Home.LocationViewModel(name: c,
+                                                      isCurrentLocation: true,
+                                                      weatherDescription: "",
+                                                      temperature: "",
+                                                      locationKey: "",
+                                                      added: Date(timeIntervalSince1970: 0)))
         }
         
         self.completeListWithSavedLocations(locations: locations)
@@ -81,7 +86,12 @@ extension HomeInteractor: HomeInteractorProtocol {
             var locationList = locations
             let savedLocations = try context.fetch(LocationEntity.fetchRequest())
             savedLocations.forEach() { location in
-                locationList.append(Home.LocationViewModel(name: location.city ?? "Unknown", isCurrentLocation: false, weatherDescription: "", temperature: ""))
+                locationList.append(Home.LocationViewModel(name: location.city ?? "Unknown",
+                                                             isCurrentLocation: false,
+                                                             weatherDescription: "",
+                                                             temperature: "",
+                                                             locationKey: location.locationKey ?? "",
+                                                             added: location.added!))
             }
             self.getWeatherFromLocations(locations: locationList)
         } catch {
@@ -90,7 +100,34 @@ extension HomeInteractor: HomeInteractorProtocol {
     }
     
     func getWeatherFromLocations(locations: [Home.LocationViewModel]) {
-        presenter.showLocationList(locations: locations)
+        var locationList: [Home.LocationViewModel] = []
+        locations.forEach() { location in
+            AccuweatherService.shared.getConditions(location: location.locationKey) { currentConditions in
+                let l = Home.LocationViewModel(name: location.name,
+                                                 isCurrentLocation: location.isCurrentLocation,
+                                                 weatherDescription: currentConditions.WeatherText,
+                                                 temperature: "\(currentConditions.Temperature.Metric.Value)º",
+                                                 locationKey: location.locationKey,
+                                                 added: location.added)
+                locationList.append(l)
+                self.fillAndReturnList(returnList: locationList, listCapacity: locations.count)
+            } failure: { error in
+                print(error)
+                locationList.append(Home.LocationViewModel(name: location.name,
+                                                             isCurrentLocation: location.isCurrentLocation,
+                                                             weatherDescription: "",
+                                                             temperature: "",
+                                                             locationKey: location.locationKey,
+                                                             added: location.added))
+                self.fillAndReturnList(returnList: locationList, listCapacity: locations.count)
+            }
+        }
+    }
+    
+    func fillAndReturnList(returnList: [Home.LocationViewModel], listCapacity: Int) {
+        if returnList.count == listCapacity {
+            self.presenter.showLocationList(locations: returnList.sorted{$0.added < $1.added})
+        }
     }
     
 }

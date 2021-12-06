@@ -49,7 +49,7 @@ extension LocationPresenter: LocationPresenterProtocol {
     }
     
     func saveLocation(placeViewModel: Location.PlaceViewModel) {
-        interactor.saveLocation(placeViewModel: placeViewModel)
+        interactor.completeWithLocationKey(placeViewModel: placeViewModel)
     }
     
 }

@@ -19,7 +19,7 @@ class AccuweatherService {
         
         func url() -> URL? {
             
-            let uri = "http://dataservice.accuweather.com/currentconditions/v1"
+            let uri = "http://dataservice.accuweather.com"
             let language = "es-es"
             var apikey = ""
             if let path = Bundle.main.path(forResource: "Services-Info", ofType: "plist"),
@@ -29,9 +29,9 @@ class AccuweatherService {
             
             switch self {
             case .geoposition(let latitude, let longitude) :
-                return URL(string: "\(uri)/cities/geoposition/search?apikey=\(apikey)&q=\(latitude),\(longitude)&language=\(language)")
+                return URL(string: "\(uri)/locations/v1/cities/geoposition/search?apikey=\(apikey)&q=\(latitude),\(longitude)&language=\(language)")
             case .conditions(let location):
-                return URL(string: "\(uri)/\(location)?apikey=\(apikey)&language=\(language)")
+                return URL(string: "\(uri)/currentconditions/v1/\(location)?apikey=\(apikey)&language=\(language)")
             }
         
         }
@@ -62,9 +62,9 @@ class AccuweatherService {
             return
         }
         
-        AF.request(url).responseDecodable(of: CurrentConditions.self) { response in
+        AF.request(url).responseDecodable(of: [CurrentConditions].self) { response in
             if let conditions = response.value {
-                success(conditions)
+                success(conditions.first!)
                 return
             }
             

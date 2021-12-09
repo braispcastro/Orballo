@@ -34,7 +34,7 @@ final class SkyPresenter {
 extension SkyPresenter: SkyPresenterProtocol {
     
     func prepareView() {
-        let viewModel = Sky.ViewModel(title: "Sky")
+        let viewModel = Sky.ViewModel(title: "Astronomy")
         LocationManager.shared.startUpdatingLocation()
         viewController.show(viewModel: viewModel)
     }

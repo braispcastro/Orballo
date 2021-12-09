@@ -20,6 +20,10 @@ class LocationViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if #available(iOS 13.0, *) {
+            self.overrideUserInterfaceStyle = .light
+        }
+        
         centerLocationButton.addTarget(self, action: #selector(centerInCurrentLocation), for: .touchUpInside)
         addLocationButton.addTarget(self, action: #selector(getLocationInformation), for: .touchUpInside)
         

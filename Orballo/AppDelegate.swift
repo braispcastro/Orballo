@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let skyViewController = SkyBuilder().build()
         let settingsViewController = SettingsBuilder().build()
         let mainTabBarViewController = UITabBarController()
+        mainTabBarViewController.tabBar.tintColor = UIColor(named: "Day")
         mainTabBarViewController.setViewControllers([
             homeViewController,
             locationViewController,

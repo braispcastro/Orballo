@@ -17,7 +17,7 @@ final class SkyBuilder {
         let interactor = SkyInteractor()
         let presenter: SkyPresenter = SkyPresenter(viewController: viewController, router: router, interactor: interactor)
         
-        viewController.title = "Sky"
+        viewController.title = "Astronomy"
         viewController.tabBarItem.image = UIImage(systemName: "sun.max")
         
         viewController.presenter = presenter

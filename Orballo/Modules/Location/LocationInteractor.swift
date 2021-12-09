@@ -12,7 +12,7 @@ import CoreData
 
 protocol LocationInteractorProtocol {
     func getLocationInformation(latitude: Double, longitude: Double)
-    func completeWithLocationKey(placeViewModel: Location.PlaceViewModel)
+    func saveLocation(placeViewModel: Location.PlaceViewModel)
 }
 
 protocol LocationInteractorCallbackProtocol {
@@ -50,26 +50,7 @@ extension LocationInteractor: LocationInteractorProtocol {
         }
     }
     
-    func completeWithLocationKey(placeViewModel: Location.PlaceViewModel) {
-        do {
-            let fetchRequest = LocationEntity.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "city == %@", placeViewModel.city)
-            let object = try context.fetch(fetchRequest)
-            if (object.count > 0) {
-                // TODO: Notify user location already saved (??)
-            } else {
-                AccuweatherService.shared.getLocationKey(latitude: placeViewModel.latitude, longitude: placeViewModel.longitude) { key in
-                    self.saveLocation(placeViewModel: placeViewModel, locationKey: key)
-                } failure: { error in
-                    print(error)
-                }
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    func saveLocation(placeViewModel: Location.PlaceViewModel, locationKey: String) {
+    func saveLocation(placeViewModel: Location.PlaceViewModel) {
         do {
             let location = LocationEntity(context: self.context)
             location.country = placeViewModel.country
@@ -78,7 +59,6 @@ extension LocationInteractor: LocationInteractorProtocol {
             location.zipcode = placeViewModel.zipcode
             location.latitude = placeViewModel.latitude
             location.longitude = placeViewModel.longitude
-            location.locationKey = locationKey
             location.added = Date()
             try self.context.save()
         } catch {

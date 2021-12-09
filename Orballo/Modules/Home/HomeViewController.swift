@@ -86,10 +86,19 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
+        //let textColor = item.isDay ? UIColor(named: "Night") : UIColor(named: "Day")
+        let textColor = item.isDay ? UIColor(named: "OrballoTextDark") : UIColor(named: "OrballoTextLight")
+        let backgroundColor = item.isDay ? UIColor(named: "Day") : UIColor(named: "Night")
+        
         cell.locationName.text = item.name
+        cell.locationName.textColor = textColor
         cell.locationImage.isHidden = !item.isCurrentLocation
+        cell.locationImage.tintColor = textColor
         cell.weatherDescription.text = item.weatherDescription
+        cell.weatherDescription.textColor = textColor
         cell.temperature.text = item.temperature
+        cell.temperature.textColor = textColor
+        cell.backgroundColor = backgroundColor
         return cell
     }
     

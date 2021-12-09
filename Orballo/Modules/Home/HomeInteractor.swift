@@ -60,23 +60,23 @@ extension HomeInteractor: HomeInteractorProtocol {
             
             if let placemark = p {
                 let city = placemark[0].locality ?? "Unknown"
-                self.createLocationList(city: city)
+                self.createLocationList(city: city, latitude: latitude, longitude: longitude)
             } else {
-                self.createLocationList(city: nil)
+                self.createLocationList(city: "Unknown", latitude: latitude, longitude: longitude)
             }
         }
     }
     
-    func createLocationList(city: String?) {
+    func createLocationList(city: String, latitude: Double, longitude: Double) {
         var locations: [Home.LocationViewModel] = []
-        if let c = city {
-            locations.append(Home.LocationViewModel(name: c,
-                                                      isCurrentLocation: true,
-                                                      weatherDescription: "",
-                                                      temperature: "",
-                                                      locationKey: "",
-                                                      added: Date(timeIntervalSince1970: 0)))
-        }
+        locations.append(Home.LocationViewModel(name: city,
+                                                latitude: latitude,
+                                                longitude: longitude,
+                                                isCurrentLocation: true,
+                                                weatherDescription: "",
+                                                temperature: "",
+                                                isDay: true,
+                                                added: Date(timeIntervalSince1970: 0)))
         
         self.completeListWithSavedLocations(locations: locations)
     }
@@ -87,11 +87,13 @@ extension HomeInteractor: HomeInteractorProtocol {
             let savedLocations = try context.fetch(LocationEntity.fetchRequest())
             savedLocations.forEach() { location in
                 locationList.append(Home.LocationViewModel(name: location.city ?? "Unknown",
-                                                             isCurrentLocation: false,
-                                                             weatherDescription: "",
-                                                             temperature: "",
-                                                             locationKey: location.locationKey ?? "",
-                                                             added: location.added!))
+                                                           latitude: location.latitude,
+                                                           longitude: location.longitude,
+                                                           isCurrentLocation: false,
+                                                           weatherDescription: "",
+                                                           temperature: "",
+                                                           isDay: true,
+                                                           added: location.added!))
             }
             self.getWeatherFromLocations(locations: locationList)
         } catch {
@@ -102,23 +104,27 @@ extension HomeInteractor: HomeInteractorProtocol {
     func getWeatherFromLocations(locations: [Home.LocationViewModel]) {
         var locationList: [Home.LocationViewModel] = []
         locations.forEach() { location in
-            AccuweatherService.shared.getConditions(location: location.locationKey) { currentConditions in
+            WeatherApiService.shared.current(latitude: location.latitude, longitude: location.longitude) { currentConditions in
                 let l = Home.LocationViewModel(name: location.name,
-                                                 isCurrentLocation: location.isCurrentLocation,
-                                                 weatherDescription: currentConditions.WeatherText,
-                                                 temperature: "\(currentConditions.Temperature.Metric.Value)º",
-                                                 locationKey: location.locationKey,
-                                                 added: location.added)
+                                               latitude: location.latitude,
+                                               longitude: location.longitude,
+                                               isCurrentLocation: location.isCurrentLocation,
+                                               weatherDescription: currentConditions.condition.text,
+                                               temperature: "\(currentConditions.celsius)º",
+                                               isDay: currentConditions.isDay == 1,
+                                               added: location.added)
                 locationList.append(l)
                 self.fillAndReturnList(returnList: locationList, listCapacity: locations.count)
             } failure: { error in
                 print(error)
                 locationList.append(Home.LocationViewModel(name: location.name,
-                                                             isCurrentLocation: location.isCurrentLocation,
-                                                             weatherDescription: "",
-                                                             temperature: "",
-                                                             locationKey: location.locationKey,
-                                                             added: location.added))
+                                                           latitude: location.latitude,
+                                                           longitude: location.longitude,
+                                                           isCurrentLocation: location.isCurrentLocation,
+                                                           weatherDescription: "",
+                                                           temperature: "",
+                                                           isDay: true,
+                                                           added: location.added))
                 self.fillAndReturnList(returnList: locationList, listCapacity: locations.count)
             }
         }

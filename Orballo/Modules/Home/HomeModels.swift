@@ -15,10 +15,12 @@ enum Home {
     
     struct LocationViewModel: Equatable {
         let name: String
+        let latitude: Double
+        let longitude: Double
         let isCurrentLocation: Bool
         let weatherDescription: String
         let temperature: String
-        let locationKey: String
+        let isDay: Bool
         let added: Date
     }
     

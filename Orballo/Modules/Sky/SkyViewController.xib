@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SkyViewController" customModule="Orballo" customModuleProvider="target">
             <connections>
+                <outlet property="locationLabel" destination="juP-dY-fYl" id="nMk-bS-lDE"/>
+                <outlet property="moonriseLabel" destination="2qA-bx-9Cp" id="6bg-Cf-fDV"/>
+                <outlet property="moonsetLabel" destination="Ifc-FX-bAR" id="DFL-6c-bWq"/>
+                <outlet property="sunriseLabel" destination="KCF-QY-K0A" id="1Yf-8J-5vR"/>
+                <outlet property="sunsetLabel" destination="S9h-a6-nxX" id="50n-a2-a5C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,23 +24,186 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ASTRONOMY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66b-xz-5j3">
-                    <rect key="frame" x="154.5" y="437.5" width="105.5" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gvf-Ca-9vT">
+                    <rect key="frame" x="15" y="59" width="384" height="788"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="SK3-HH-csO" userLabel="Location Stack">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="32"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NeL-of-L9h">
+                                    <rect key="frame" x="0.0" y="1" width="32" height="30.5"/>
+                                    <color key="tintColor" name="OrballoTextLight"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="32" id="2cy-bf-g1e"/>
+                                        <constraint firstAttribute="width" secondItem="NeL-of-L9h" secondAttribute="height" multiplier="1:1" id="Eh2-Cc-4C2"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juP-dY-fYl">
+                                    <rect key="frame" x="47" y="0.0" width="337" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                    <color key="textColor" name="OrballoTextLight"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="juP-dY-fYl" firstAttribute="height" secondItem="NeL-of-L9h" secondAttribute="height" id="7uA-dr-JiF"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="A69-zJ-xhq" userLabel="Sun Stack">
+                            <rect key="frame" x="0.0" y="47" width="384" height="217.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="r8o-x0-DMs" userLabel="Sunrise Stack">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="217.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunrise.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UHN-3o-ggh">
+                                            <rect key="frame" x="0.0" y="-1.5" width="192" height="191.5"/>
+                                            <color key="tintColor" name="Day"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="UHN-3o-ggh" secondAttribute="height" multiplier="1:1" id="0QX-qg-POx"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCF-QY-K0A">
+                                            <rect key="frame" x="0.0" y="192" width="192" height="25.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <color key="textColor" name="Day"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1t-AC-2zg" userLabel="Fill View">
+                                            <rect key="frame" x="0.0" y="217.5" width="192" height="335"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="X1t-AC-2zg"/>
+                                        </mask>
+                                    </variation>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-A3-iSp" userLabel="Sunset Stack">
+                                    <rect key="frame" x="192" y="0.0" width="192" height="217.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunset.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TxZ-io-7ir">
+                                            <rect key="frame" x="0.0" y="-1.5" width="192" height="191.5"/>
+                                            <color key="tintColor" name="Day"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="TxZ-io-7ir" secondAttribute="height" multiplier="1:1" id="K1J-fh-Dr3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9h-a6-nxX">
+                                            <rect key="frame" x="0.0" y="192" width="192" height="25.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <color key="textColor" name="Day"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAR-vY-zlV" userLabel="Fill View">
+                                            <rect key="frame" x="0.0" y="217.5" width="192" height="335"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="wAR-vY-zlV"/>
+                                        </mask>
+                                    </variation>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LAz-PS-Um3" userLabel="Moon Stack">
+                            <rect key="frame" x="0.0" y="279.5" width="384" height="217.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4hi-PY-wMI" userLabel="Moonrise Stack">
+                                    <rect key="frame" x="0.0" y="0.0" width="192" height="217.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moon.stars.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pUF-Dn-IlK">
+                                            <rect key="frame" x="0.0" y="0.0" width="192" height="191.5"/>
+                                            <color key="tintColor" name="OrballoTextDark"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="pUF-Dn-IlK" secondAttribute="height" multiplier="1:1" id="SzE-Ih-Bb8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qA-bx-9Cp">
+                                            <rect key="frame" x="0.0" y="192" width="192" height="25.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <color key="textColor" name="OrballoTextDark"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ua1-X6-ubI" userLabel="Fill View">
+                                            <rect key="frame" x="0.0" y="217.5" width="192" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="Ua1-X6-ubI"/>
+                                        </mask>
+                                    </variation>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bJB-LP-Art" userLabel="Moonset Stack">
+                                    <rect key="frame" x="192" y="0.0" width="192" height="217.5"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moon.zzz.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QGb-km-9yo">
+                                            <rect key="frame" x="0.0" y="-1" width="192" height="193"/>
+                                            <color key="tintColor" name="OrballoTextDark"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="QGb-km-9yo" secondAttribute="height" multiplier="1:1" id="NfY-8r-qaR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifc-FX-bAR">
+                                            <rect key="frame" x="0.0" y="192" width="192" height="25.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                            <color key="textColor" name="OrballoTextDark"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVf-0p-gfo" userLabel="Fill View">
+                                            <rect key="frame" x="0.0" y="217.5" width="192" height="16"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="DVf-0p-gfo"/>
+                                        </mask>
+                                    </variation>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Umj-uq-PkL">
+                            <rect key="frame" x="0.0" y="512" width="384" height="276"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="66b-xz-5j3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Bvi-cO-VWz"/>
-                <constraint firstItem="66b-xz-5j3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="hqS-xI-6Vg"/>
+                <constraint firstItem="gvf-Ca-9vT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="Hkx-nn-Blh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gvf-Ca-9vT" secondAttribute="trailing" constant="15" id="J1z-EO-HIc"/>
+                <constraint firstItem="gvf-Ca-9vT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="c4y-F7-nsX"/>
+                <constraint firstItem="gvf-Ca-9vT" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="-15" id="shT-m2-ufL"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="132"/>
+            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>
     </objects>
     <resources>
+        <image name="location.fill" catalog="system" width="128" height="121"/>
+        <image name="moon.stars.fill" catalog="system" width="124" height="128"/>
+        <image name="moon.zzz.fill" catalog="system" width="115" height="128"/>
+        <image name="sunrise.fill" catalog="system" width="128" height="97"/>
+        <image name="sunset.fill" catalog="system" width="128" height="97"/>
+        <namedColor name="Day">
+            <color red="0.94117647058823528" green="0.74117647058823533" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OrballoTextDark">
+            <color red="0.15294117647058825" green="0.11764705882352941" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OrballoTextLight">
+            <color red="0.96470588235294119" green="0.89803921568627454" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.navigationController?.navigationBar.prefersLargeTitles = true
+        self.tabBarController?.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "OrballoTextLight")]
         self.tabBarController?.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
         self.tabBarController?.navigationController?.navigationBar.sizeToFit()
     }

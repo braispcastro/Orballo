@@ -11,6 +11,11 @@ enum Sky {
     
     struct ViewModel: Equatable {
         let title: String
+        var location: String
+        var sunrise: String
+        var sunset: String
+        var moonrise: String
+        var moonset: String
     }
     
 }

@@ -8,7 +8,13 @@
 import UIKit
 
 class SkyViewController: BaseViewController {
-
+    
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var sunriseLabel: UILabel!
+    @IBOutlet weak var sunsetLabel: UILabel!
+    @IBOutlet weak var moonriseLabel: UILabel!
+    @IBOutlet weak var moonsetLabel: UILabel!
+    
     var presenter: SkyPresenterProtocol!
     private var viewModel: Sky.ViewModel!
     
@@ -29,6 +35,11 @@ extension SkyViewController: SkyViewControllerProtocol {
         self.viewModel = viewModel
         self.tabBarController?.title = viewModel.title
         self.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: true)
+        locationLabel.text = viewModel.location
+        sunriseLabel.text = viewModel.sunrise
+        sunsetLabel.text = viewModel.sunset
+        moonriseLabel.text = viewModel.moonrise
+        moonsetLabel.text = viewModel.moonset
     }
     
 }

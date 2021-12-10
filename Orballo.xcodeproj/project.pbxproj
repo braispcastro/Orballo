@@ -294,14 +294,6 @@
 			path = WeatherApi;
 			sourceTree = "<group>";
 		};
-		8B1DD8FB2762A47000233CE6 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				8BE6BED12756AC8E00C710EC /* SettingsRouter.swift */,
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		8B2949D62759461700FDC625 /* Database */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,7 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				8BE6BECF2756ABF900C710EC /* SettingsBuilder.swift */,
-				8B1DD8FB2762A47000233CE6 /* New Group */,
+				8BE6BED12756AC8E00C710EC /* SettingsRouter.swift */,
 				8BE6BED42756ACC300C710EC /* SettingsViewController.xib */,
 				8BE6BED32756ACC300C710EC /* SettingsViewController.swift */,
 				8BE6BED72756AD0700C710EC /* SettingsPresenter.swift */,

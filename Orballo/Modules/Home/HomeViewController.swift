@@ -86,7 +86,6 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        //let textColor = item.isDay ? UIColor(named: "Night") : UIColor(named: "Day")
         let textColor = item.isDay ? UIColor(named: "OrballoTextDark") : UIColor(named: "OrballoTextLight")
         let backgroundColor = item.isDay ? UIColor(named: "Day") : UIColor(named: "Night")
         

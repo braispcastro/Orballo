@@ -17,6 +17,7 @@ class WeatherApiService {
     private enum WeatherApiServiceAPI {
         
         case current(Double, Double)
+        case astronomy(Double, Double)
         
         func url() -> URL? {
             
@@ -27,11 +28,16 @@ class WeatherApiService {
                 apikey = dictionary["weatherapi-apikey"] as! String
             }
             
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let date = dateFormatter.string(from: Date())
+            
             switch self {
-            case .current(let latitude, let longitude) :
+            case .current(let latitude, let longitude):
                 return URL(string: "\(uri)/current.json?key=\(apikey)&q=\(latitude),\(longitude)&aqi=no")
+            case .astronomy(let latitude, let longitude):
+                return URL(string: "\(uri)/astronomy.json?key=\(apikey)&q=\(latitude),\(longitude)&dt=\(date)")
             }
-        
         }
     }
     
@@ -45,6 +51,24 @@ class WeatherApiService {
         AF.request(url).responseDecodable(of: Weather.self) { response in
             if let current = response.value?.current {
                 success(current)
+                return
+            }
+            
+            failure(response.error)
+        }
+        
+    }
+    
+    func astronomy(latitude: Double, longitude: Double, success: @escaping (_ astro: Astro) -> Void, failure: @escaping (_ error: Error?) -> Void) {
+        
+        guard let url = WeatherApiServiceAPI.astronomy(latitude, longitude).url() else {
+            failure(nil)
+            return
+        }
+        
+        AF.request(url).responseDecodable(of: SkyTime.self) { response in
+            if let astro = response.value?.astronomy.astro {
+                success(astro)
                 return
             }
             

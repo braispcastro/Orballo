@@ -9,6 +9,8 @@ import UIKit
 
 class SettingsViewController: BaseViewController {
 
+    @IBOutlet weak var versionLabel: UILabel!
+    
     var presenter: SettingsPresenterProtocol!
     private var viewModel: Settings.ViewModel!
     
@@ -29,6 +31,7 @@ extension SettingsViewController: SettingsViewControllerProtocol {
         self.viewModel = viewModel
         self.tabBarController?.title = viewModel.title
         self.tabBarController?.navigationController?.setNavigationBarHidden(false, animated: true)
+        versionLabel.text = viewModel.version
     }
     
 }

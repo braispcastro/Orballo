@@ -29,12 +29,21 @@ final class SettingsPresenter {
             self.interactor = interactor
         }
     
+    
+    private func getStringVersion() -> String {
+        var appVersion = "."
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            appVersion = version
+        }
+        return appVersion
+    }
+    
 }
 
 extension SettingsPresenter: SettingsPresenterProtocol {
     
     func prepareView() {
-        let viewModel = Settings.ViewModel(title: "Settings")
+        let viewModel = Settings.ViewModel(title: "Settings", version: getStringVersion())
         viewController.show(viewModel: viewModel)
     }
     

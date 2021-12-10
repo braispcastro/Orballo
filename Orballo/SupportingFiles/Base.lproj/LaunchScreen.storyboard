@@ -16,18 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ORBALLO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D7-8W-ugZ">
-                                <rect key="frame" x="115" y="423" width="184.5" height="50.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
-                                <color key="textColor" name="OrballoTextLight"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Orballo" translatesAutoresizingMaskIntoConstraints="NO" id="9xs-1c-1fE">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="ED2-1l-bNS"/>
+                                    <constraint firstAttribute="width" secondItem="9xs-1c-1fE" secondAttribute="height" multiplier="1:1" id="lyE-ZB-GzE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="OrballoBackground"/>
                         <constraints>
-                            <constraint firstItem="7D7-8W-ugZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="IKy-Me-TXM"/>
-                            <constraint firstItem="7D7-8W-ugZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ml0-8R-Yg7"/>
+                            <constraint firstItem="9xs-1c-1fE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="YNz-GB-jM4"/>
+                            <constraint firstItem="9xs-1c-1fE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lTf-mm-tmM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,11 +38,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Orballo" width="360" height="360"/>
         <namedColor name="OrballoBackground">
             <color red="0.40392156862745099" green="0.27843137254901962" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="OrballoTextLight">
-            <color red="0.96470588235294119" green="0.89803921568627454" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

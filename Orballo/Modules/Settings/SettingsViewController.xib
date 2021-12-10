@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Orballo" customModuleProvider="target">
             <connections>
+                <outlet property="versionLabel" destination="xbF-YV-rOC" id="hOG-DE-ZHb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,23 +20,57 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kz0-zz-08f">
-                    <rect key="frame" x="167" y="437.5" width="80" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v8a-Gy-UAO">
+                    <rect key="frame" x="15" y="74" width="384" height="788"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cs1-8D-TXY">
+                            <rect key="frame" x="0.0" y="0.0" width="384" height="32"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="IvL-tV-3cE">
+                                    <rect key="frame" x="0.0" y="0.5" width="32" height="31"/>
+                                    <color key="tintColor" name="Day"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="1Kn-I7-haS"/>
+                                        <constraint firstAttribute="width" secondItem="IvL-tV-3cE" secondAttribute="height" multiplier="1:1" id="UM5-Mv-OQa"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Version" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrF-mJ-HLk">
+                                    <rect key="frame" x="47" y="0.0" width="279.5" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                    <color key="textColor" name="Day"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="300" verticalHuggingPriority="300" text="0.0.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbF-YV-rOC">
+                                    <rect key="frame" x="341.5" y="0.0" width="42.5" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                    <color key="textColor" name="Day"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YXY-HB-rhu" userLabel="Fill View">
+                            <rect key="frame" x="0.0" y="32" width="384" height="756"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Kz0-zz-08f" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="J6p-UO-iFy"/>
-                <constraint firstItem="Kz0-zz-08f" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="wfa-io-yPg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v8a-Gy-UAO" secondAttribute="trailing" constant="15" id="2Jo-rt-qpa"/>
+                <constraint firstItem="v8a-Gy-UAO" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="4gB-9M-7TP"/>
+                <constraint firstItem="v8a-Gy-UAO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="AJT-6W-abq"/>
+                <constraint firstItem="v8a-Gy-UAO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="TEO-b0-Iz4"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="132"/>
+            <point key="canvasLocation" x="131.8840579710145" y="131.91964285714286"/>
         </view>
     </objects>
     <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="Day">
+            <color red="0.94117647058823528" green="0.74117647058823533" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

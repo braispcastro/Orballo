@@ -11,6 +11,7 @@ enum Settings {
     
     struct ViewModel: Equatable {
         let title: String
+        let version: String
     }
     
 }
